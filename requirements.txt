@@ -1,12 +1,10 @@
 streamlit
-requests
 langchain
 langchain_groq
 langchain_google_genai
 langchain_community
-pypdf
-faiss-cpu
+google-api-python-client
 elevenlabs
-moviepy
+moviepy==1.0.3
 Pillow
-importlib-metadata>=6.0.0
+requests
