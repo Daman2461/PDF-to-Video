@@ -77,7 +77,8 @@ Damanjit Singh
 
 ## License 📄
 MIT License
-
+## Future Scope
+- User can also prompt about a topic and a relevant video for that prompt shall be displayed, not requiring the user to input any text about the topic
 ## Need Help? ❓
 - Check API key validity
 - Ensure all dependencies are installed
