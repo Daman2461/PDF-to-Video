@@ -136,15 +136,14 @@ def create_video_with_images(text_content, audio_path, background_video_path):
         # If there are image clips, concatenate them with the video
         if image_clips:
             final_video = concatenate_videoclips([
-                video_clip,
+                video_clip.subclipped(0, duration_per_image),
                 *image_clips
             ])
         else:
             final_video = video_clip
-        
         # Set audio
         final_video = final_video.set_audio(audio_clip)
-        
+        final_video = final_video.subclipped(0, audio_clip.duration)
         # Save final video
         final_video_path = "educational_video.mp4"
         final_video.write_videofile(final_video_path, codec="libx264", audio_codec="aac")
