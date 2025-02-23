@@ -17,7 +17,14 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.chains import create_retrieval_chain
 from elevenlabs.client import ElevenLabs
-from moviepy import VideoFileClip, AudioFileClip, CompositeAudioClip, ImageClip, concatenate_videoclips
+
+
+from moviepy.video.io.VideoFileClip import VideoFileClip
+from moviepy.video.VideoClip import ImageClip
+from moviepy.audio.io.AudioFileClip import AudioFileClip
+from moviepy.video.compositing.concatenate import concatenate_videoclips
+
+
 from PIL import Image
 from io import BytesIO
 st.set_page_config(
@@ -119,7 +126,9 @@ def create_video_with_images(text_content, audio_path, background_video_path):
                 img = img.resize((video_clip.w, video_clip.h), Image.Resampling.LANCZOS)
                 img.save(img_path)
                 
-                img_clip = (ImageClip(img_path))
+                img_clip = (ImageClip(img_path)
+                          .set_duration(duration_per_image)
+                          .set_pos(('center', 'center')))
                           
                            
                 image_clips.append(img_clip)
