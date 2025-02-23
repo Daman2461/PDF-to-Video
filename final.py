@@ -3,9 +3,12 @@ import os
 print("Python path:", sys.executable)
 print("Current working directory:", os.getcwd())
 
+
+ 
+os.system("pip install moviepy")
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 import streamlit as st
-import os
+ 
 import random
 import requests
 from langchain_groq import ChatGroq
