@@ -1,29 +1,12 @@
-# Core setup packages
-setuptools==59.8.0
-wheel==0.37.1
-
-# Main dependencies
-streamlit==1.42.2
-langchain==0.3.19
-langchain-core==0.3.37
-langchain-community==0.3.18
-langchain-groq==0.2.4
-langchain-google-genai==2.0.10
-google-generativeai==0.8.4
-elevenlabs==1.51.0
-
-# Video processing with compatible versions
-moviepy==1.0.3
-decorator==4.4.2
-imageio==2.31.1
-imageio-ffmpeg==0.4.8
-proglog==0.1.10
-
-# Other dependencies
-Pillow==10.0.0
-python-dotenv==1.0.1
-requests==2.31.0
-faiss-cpu==1.7.4
-PyPDF2==3.0.1
-setuptools
-numpy==1.24.3
+streamlit
+requests
+langchain
+langchain_groq
+langchain_google_genai
+langchain_community
+pypdf
+faiss-cpu
+elevenlabs
+moviepy
+Pillow
+importlib-metadata>=6.0.0
