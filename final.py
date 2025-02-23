@@ -19,10 +19,8 @@ from langchain.chains import create_retrieval_chain
 from elevenlabs.client import ElevenLabs
 
 
-from moviepy.video.io.VideoFileClip import VideoFileClip
-from moviepy.video.VideoClip import ImageClip
-from moviepy.audio.io.AudioFileClip import AudioFileClip
-from moviepy.video.compositing.concatenate import concatenate_videoclips
+from moviepy.editor import VideoFileClip, AudioFileClip, CompositeAudioClip, ImageClip, concatenate_videoclips
+
 
 
 from PIL import Image
