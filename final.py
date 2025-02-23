@@ -4,8 +4,7 @@ print("Python path:", sys.executable)
 print("Current working directory:", os.getcwd())
 
 
- 
-os.system("pip install moviepy")
+  
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 import streamlit as st
  
@@ -22,7 +21,7 @@ from langchain.chains import create_retrieval_chain
 from elevenlabs.client import ElevenLabs
 
 
-from moviepy.editor import VideoFileClip, AudioFileClip, CompositeAudioClip, ImageClip, concatenate_videoclips
+from moviepy import VideoFileClip, AudioFileClip, CompositeAudioClip, ImageClip, concatenate_videoclips
 
 
 
@@ -127,9 +126,7 @@ def create_video_with_images(text_content, audio_path, background_video_path):
                 img = img.resize((video_clip.w, video_clip.h), Image.Resampling.LANCZOS)
                 img.save(img_path)
                 
-                img_clip = (ImageClip(img_path)
-                          .set_duration(duration_per_image)
-                          .set_pos(('center', 'center')))
+                img_clip = (ImageClip(img_path))
                           
                            
                 image_clips.append(img_clip)
