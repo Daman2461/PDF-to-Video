@@ -16,3 +16,7 @@ SQLAlchemy
 aiohttp
 dataclasses-json
 jsonpatch
+moviepy
+imageio[ffmpeg]
+pillow
+numpy
