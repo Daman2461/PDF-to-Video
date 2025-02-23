@@ -40,7 +40,7 @@ unsplash_api_key = st.secrets["UNSPLASH_API_KEY"]["access_key"]
 os.environ["GOOGLE_API_KEY"] = google_api_key
 
 # Background educational video  
-video_url = "https://drive.google.com/uc?export=download&id=1ncTcikpiBRvM1vVrBKY3vYpyQDqhlhkW"
+video_url = "https://drive.google.com/uc?export=download&id=1chLHAx1nXGPviEve25aRd95_IKk-cycC"
 video_path = "education_video.mp4"
 
 # Download background video
