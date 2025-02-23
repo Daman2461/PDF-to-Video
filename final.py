@@ -3,11 +3,9 @@ import os
 print("Python path:", sys.executable)
 print("Current working directory:", os.getcwd())
 
-
-  
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 import streamlit as st
- 
+import os
 import random
 import requests
 from langchain_groq import ChatGroq
@@ -19,12 +17,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.chains import create_retrieval_chain
 from elevenlabs.client import ElevenLabs
-
-
 from moviepy import VideoFileClip, AudioFileClip, CompositeAudioClip, ImageClip, concatenate_videoclips
-
-
-
 from PIL import Image
 from io import BytesIO
 st.set_page_config(
@@ -127,13 +120,9 @@ def create_video_with_images(text_content, audio_path, background_video_path):
                 img.save(img_path)
                 
                 img_clip = (ImageClip(img_path))
-                          
-                           
                 image_clips.append(img_clip)
         
         # Rest of the function remains the same
-
-        # If there are image clips, concatenate them with the video
         if image_clips:
             final_video = concatenate_videoclips([
                 video_clip.subclipped(0, duration_per_image),
@@ -141,9 +130,13 @@ def create_video_with_images(text_content, audio_path, background_video_path):
             ])
         else:
             final_video = video_clip
+            
         # Set audio
         final_video = final_video.set_audio(audio_clip)
+        
+        # Trim to match audio duration
         final_video = final_video.subclipped(0, audio_clip.duration)
+        
         # Save final video
         final_video_path = "educational_video.mp4"
         final_video.write_videofile(final_video_path, codec="libx264", audio_codec="aac")
@@ -152,9 +145,9 @@ def create_video_with_images(text_content, audio_path, background_video_path):
         for img_path in images:
             try:
                 os.remove(img_path)
-            except Exception as e:
-                print(f"Error deleting {img_path}: {e}")
-                    
+            except:
+                pass
+            
         return final_video_path
     except Exception as e:
         st.error(f"Error creating video: {e}")
