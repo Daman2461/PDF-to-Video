@@ -120,7 +120,7 @@ def create_video_with_images(text_content, audio_path, background_video_path):
                 img.save(img_path)
                 
                 img_clip = (ImageClip(img_path)
-                          .set_duration(duration_per_image)
+                          
                           .set_pos(('center', 'center')))
                 image_clips.append(img_clip)
         
