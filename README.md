@@ -5,9 +5,13 @@ A powerful tool that converts PDF documents or text into educational videos with
 <img width="1486" alt="image" src="https://github.com/user-attachments/assets/5e9f3ee6-8880-49e3-8607-acad4eb0733e" />
 for the example above the video generated:
 
-dont forget to unmute
+dont forget to unmute below
 
-https://github.com/user-attachments/assets/d559f802-1772-469d-8cf0-48d1c3fee19d
+
+https://github.com/user-attachments/assets/722d1694-4a80-46c1-bbae-3ad2a6cee5e8
+
+
+
 
 
 ## Features 🌟
