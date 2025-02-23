@@ -25,4 +25,5 @@ python-dotenv==1.0.1
 requests==2.31.0
 faiss-cpu==1.7.4
 PyPDF2==3.0.1
+setuptools
 numpy==1.24.3
