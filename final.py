@@ -119,7 +119,7 @@ def create_video_with_images(text_content, audio_path, background_video_path):
                 img = img.resize((video_clip.w, video_clip.h), Image.Resampling.LANCZOS)
                 img.save(img_path)
                 
-                img_clip = (ImageClip(img_path)
+                img_clip = (ImageClip(img_path))
                           
                            
                 image_clips.append(img_clip)
