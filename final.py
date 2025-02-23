@@ -121,7 +121,7 @@ def create_video_with_images(text_content, audio_path, background_video_path):
                 
                 img_clip = (ImageClip(img_path)
                           
-                          .set_pos(('center', 'center')))
+                           
                 image_clips.append(img_clip)
         
         # Rest of the function remains the same
