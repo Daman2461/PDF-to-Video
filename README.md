@@ -19,7 +19,6 @@ https://github.com/user-attachments/assets/9496c8fe-2c41-4787-ba94-7523b83cde6e
 - PDF Processing: Automatically extracts and processes content from PDF documents
 - Text-to-Speech: Professional AI voice narration using ElevenLabs
 - Dynamic Visuals: Automatically fetches relevant images from Unsplash
-- Text Captions: Adds readable captions to video frames
 - High-Quality Output: Generates professional MP4 videos
 - Dual Input: Supports both PDF documents and direct text input
 
