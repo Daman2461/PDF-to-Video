@@ -17,7 +17,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.chains import create_retrieval_chain
 from elevenlabs.client import ElevenLabs
-from moviepy import VideoFileClip, AudioFileClip, CompositeAudioClip, ImageClip, concatenate_videoclips
+from moviepy.editor import VideoFileClip, AudioFileClip, CompositeAudioClip, ImageClip, concatenate_videoclips
 from PIL import Image
 from io import BytesIO
 st.set_page_config(
@@ -119,13 +119,15 @@ def create_video_with_images(text_content, audio_path, background_video_path):
                 img = img.resize((video_clip.w, video_clip.h), Image.Resampling.LANCZOS)
                 img.save(img_path)
                 
-                img_clip = (ImageClip(img_path))
+                img_clip = (ImageClip(img_path)
+                          .set_duration(duration_per_image)
+                          .set_pos(('center', 'center')))
                 image_clips.append(img_clip)
         
         # Rest of the function remains the same
         if image_clips:
             final_video = concatenate_videoclips([
-                video_clip.subclipped(0, duration_per_image),
+                video_clip.subclip(0, duration_per_image),
                 *image_clips
             ])
         else:
@@ -135,7 +137,7 @@ def create_video_with_images(text_content, audio_path, background_video_path):
         final_video = final_video.set_audio(audio_clip)
         
         # Trim to match audio duration
-        final_video = final_video.subclipped(0, audio_clip.duration)
+        final_video = final_video.subclip(0, audio_clip.duration)
         
         # Save final video
         final_video_path = "educational_video.mp4"
