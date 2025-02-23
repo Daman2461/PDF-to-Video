@@ -132,19 +132,18 @@ def create_video_with_images(text_content, audio_path, background_video_path):
                 image_clips.append(img_clip)
         
         # Rest of the function remains the same
+
+        # If there are image clips, concatenate them with the video
         if image_clips:
             final_video = concatenate_videoclips([
-                video_clip.subclip(0, duration_per_image),
+                video_clip,
                 *image_clips
             ])
         else:
             final_video = video_clip
-            
+        
         # Set audio
         final_video = final_video.set_audio(audio_clip)
-        
-        # Trim to match audio duration
-        final_video = final_video.subclip(0, audio_clip.duration)
         
         # Save final video
         final_video_path = "educational_video.mp4"
@@ -154,9 +153,9 @@ def create_video_with_images(text_content, audio_path, background_video_path):
         for img_path in images:
             try:
                 os.remove(img_path)
-            except:
-                pass
-            
+            except Exception as e:
+                print(f"Error deleting {img_path}: {e}")
+                    
         return final_video_path
     except Exception as e:
         st.error(f"Error creating video: {e}")
