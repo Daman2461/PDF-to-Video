@@ -8,9 +8,10 @@ for the example above the video generated:
 dont forget to unmute below
 
 
-https://github.com/user-attachments/assets/722d1694-4a80-46c1-bbae-3ad2a6cee5e8
 
 
+
+https://github.com/user-attachments/assets/9496c8fe-2c41-4787-ba94-7523b83cde6e
 
 
 
